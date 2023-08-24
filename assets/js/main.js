@@ -5,9 +5,13 @@ const maxRecords = 151
 const limit = 10
 let offset = 0;
 
+function verDetalhes(pokemonId) {
+    window.location.href = `detail.html?id=${pokemonId}`
+}
+
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onclick="verDetalhes(${pokemon.number})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 

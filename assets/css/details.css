@@ -1,0 +1,13 @@
+#btn_voltar:hover {
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    border: solid #000 2px;
+    border-radius: 5px;
+}

@@ -12,6 +12,12 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.types = types
     pokemon.type = type
 
+    const stats = pokeDetail.stats.map((statSlot) => statSlot.stat.name)
+    const [stat] = stats
+
+    pokemon.stats = stats
+    pokemon.stat = stat
+    
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
     return pokemon
@@ -33,3 +39,10 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
         .then((detailRequests) => Promise.all(detailRequests))
         .then((pokemonsDetails) => pokemonsDetails)
 }
+
+// Detalhes Pokemon Página
+function getDetailsPokePage(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const pokemonId = urlParams.get('id');
+}
+
